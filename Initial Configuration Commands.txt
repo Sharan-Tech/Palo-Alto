@@ -1,0 +1,22 @@
+ Initial Configuration
+
+ Below are the commands to connect the paloalto firewall to the management network. 
+
+Login to the Console Port of the Firewall (RJ45 - Serial Cable with a USB)
+Login to Putty - Serial - Enter the appropriate COM Port . COM port can be found by logging into device manager in Windows. 
+
+() - Context of the Command
+
+*************************
+configure  (Enter into the configuration mode)
+set deviceconfig system type static (restricts the system IP details to an user determined values instead of dynamically receiving via a DHCP)
+set deviceconfig system ip-address x.x.x.x netmask x.x.x.x default-gateway x.x.x.x dns-setting server primary x.x.x.x (Specifying the IP address details for the managment Interface)
+commit (Applies the configuration into the firewall)
+
+*************************
+
+Points to note: 
+---------------
+
+1. Data Interfaces can also be used for management ports. 
+2. Always make sure to check the switchport settings where the management interface is connected. 
